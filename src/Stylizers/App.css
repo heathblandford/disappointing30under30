@@ -1,0 +1,16 @@
+.App-header {
+  text-align: center;
+  background-color: #b96fd6;
+  color: black;
+  margin-bottom: 25px;
+}
+
+.App-header h1, p{
+  margin: 0;
+  padding-bottom: 10px;
+}
+
+.Card {
+  margin: 0 auto;
+  margin-bottom: 25px;
+}
