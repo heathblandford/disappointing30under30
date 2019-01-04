@@ -1,4 +1,5 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was also inspiried by a [New Yorker article](https://www.newyorker.com/humor/daily-shouts/a-selection-of-the-30-most-disappointing-under-30)
 
 # Disappointing 30 Under 30
 ### A place for your parents to get a true grasp of how disappointing you are. 
