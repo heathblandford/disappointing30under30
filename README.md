@@ -11,7 +11,7 @@ Pull requests are welcome.
 ___
 
 Todo List 
-  [ ] Make back end
-  [ ] Stylize components
-  [ ] Mobile friendly
-  [ ] upvote/downvote functionality
+- [ ] Make back end
+- [ ] Stylize components
+- [ ] Mobile friendly
+- [ ] upvote/downvote functionality
