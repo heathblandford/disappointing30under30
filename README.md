@@ -12,7 +12,7 @@ Pull requests are welcome.
 ___
 
 Todo List 
-- [ ] Make back end
+- [x] Make back end
 - [ ] Stylize components
 - [ ] Mobile friendly
 - [ ] upvote/downvote functionality
