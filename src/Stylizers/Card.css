@@ -1,13 +1,14 @@
 .Card {
     min-height: 200px;
     max-height: max-content;
-    width: 60%;
+    width: 40%;
     border: 1px solid black;
     border-radius: 25px;
     margin-bottom: 25px;
     box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
     transition: all .1s ease-in-out;
 }
+
 
 .Card:hover{
     transform: scale(1.05);
@@ -37,3 +38,18 @@
     margin-right: 10px;
     padding: 10px;
 }
+
+/* Media Queries */
+
+@media only screen and (max-width: 700px) {
+    .Card {
+        min-height: 200px;
+        max-height: max-content;
+        width: 75%;
+        border: 1px solid black;
+        border-radius: 25px;
+        margin-bottom: 25px;
+        box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+        transition: all .1s ease-in-out;
+    }
+  }
