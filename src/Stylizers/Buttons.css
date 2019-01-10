@@ -3,5 +3,15 @@
 }
 
 #humblebrag {
-    margin-left: 25px;
+    margin: 10px;
+
+}
+
+#disappointment {
+    margin: 10px;
+}
+
+.upDownButton {
+    width: 150px;
+    justify-content: center;
 }

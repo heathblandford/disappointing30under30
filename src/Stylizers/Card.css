@@ -1,6 +1,7 @@
 .Card {
-    height: 200px;
-    width: 45%;
+    min-height: 200px;
+    max-height: max-content;
+    width: 60%;
     border: 1px solid black;
     border-radius: 25px;
     margin-bottom: 25px;
