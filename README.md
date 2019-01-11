@@ -14,5 +14,5 @@ ___
 Todo List 
 - [x] Make back end
 - [ ] Stylize components
-- [ ] Mobile friendly
+- [x] Mobile friendly
 - [ ] upvote/downvote functionality
