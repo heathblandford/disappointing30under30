@@ -28,7 +28,7 @@ componentDidMount() {
         <header className="App-header">
           <h1>Disappointing 30 under 30</h1>
           <p>A place to remind your parents how much of a let down you are</p>
-		  <img src="../Assets/plusButton.svg" alt="Add Your Own" height="30" width="30" className="addYourOwn" onClick={ AddYourOwn }/>
+		  <img src="../Assets/plusButton.svg" alt="Add Your Own" height="30" width="30" className="addYourOwn" onClick={AddYourOwn}/>
         </header>
         <main>
             <CardList data={ data }/>
