@@ -1,6 +1,6 @@
 import React from 'react';
 import '../Stylizers/Card.css';
-import Buttons from '../Components/Button';
+// import Buttons from '../Components/Button';
 
 const Card = ({firstName, lastName, age, disappointment}) => {
     return (
@@ -14,7 +14,7 @@ const Card = ({firstName, lastName, age, disappointment}) => {
             <div className="disappointment">
                 <p className="disappointmentText">{disappointment}</p>
             </div>
-            <Buttons />
+            {/* <Buttons /> */}
         </div>
     );
 }

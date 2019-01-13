@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import CardList from '../Components/CardList';
 import '../Stylizers/App.css';
+import '../Assets/plusButton.svg';
+import AddYourOwn from '../Components/AddYourOwn';
 
 class App extends Component {
   constructor(props){
@@ -12,8 +14,10 @@ class App extends Component {
 };
 
 componentDidMount() {
-    fetch('https://frozen-plateau-56176.herokuapp.com')
-    .then(response => response.json())
+	//fetch api data
+	fetch('https://frozen-plateau-56176.herokuapp.com')
+	.then(response => response.json())
+	// { data } is object shorthand. this.setState() expects an object to return an array
     .then(data => this.setState({ data }));
 }
 
@@ -24,6 +28,7 @@ componentDidMount() {
         <header className="App-header">
           <h1>Disappointing 30 under 30</h1>
           <p>A place to remind your parents how much of a let down you are</p>
+		  <img src="../Assets/plusButton.svg" alt="Add Your Own" height="30" width="30" className="addYourOwn" onClick={ AddYourOwn }/>
         </header>
         <main>
             <CardList data={ data }/>
