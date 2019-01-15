@@ -1,6 +1,7 @@
 import React from 'react';
 import '../Stylizers/Card.css';
 // import Buttons from '../Components/Button';
+import Socials from '../Components/Socials';
 
 const Card = ({firstName, lastName, age, disappointment}) => {
     return (
@@ -15,6 +16,7 @@ const Card = ({firstName, lastName, age, disappointment}) => {
                 <p className="disappointmentText">{disappointment}</p>
             </div>
             {/* <Buttons /> */}
+            <Socials disappointment={ disappointment }/>
         </div>
     );
 }
