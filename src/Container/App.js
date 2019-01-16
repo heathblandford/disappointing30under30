@@ -2,17 +2,45 @@ import React, { Component } from 'react';
 import CardList from '../Components/CardList';
 import '../Stylizers/App.css';
 import '../Assets/plusButton.svg';
-import AddYourOwn from '../Components/AddYourOwn';
+import Modal from 'react-modal';
 
+const customStyles = { //this is for the modal
+	content : {
+		top                   : '50%',
+		left                  : '50%',
+		right                 : 'auto',
+		bottom                : 'auto',
+		marginRight           : '-50%',
+		transform             : 'translate(-50%, -50%)'
+	}
+};
 class App extends Component {
   constructor(props){
     super(props);
 
     this.state = {
 		data: [],
-		loading: true
-    }
+    	loading: true,
+    	modalIsOpen: false,
+	}
+
+	this.openModal = this.openModal.bind(this);
+    this.afterOpenModal = this.afterOpenModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
 };
+
+openModal() {
+    this.setState({modalIsOpen: true});
+}
+
+afterOpenModal() {
+	// references are now sync'd and can be accessed.
+	this.subtitle.style.color = '#f00';
+}
+
+closeModal() {
+	this.setState({modalIsOpen: false});
+}
 
 componentDidMount() {
 	//fetch api data
@@ -28,7 +56,7 @@ componentDidMount() {
 
   render() {
     const { data } = this.state;
-	const { loading } = this.state;
+	  const { loading } = this.state;
 
 	if(loading) { // if your component doesn't have to wait for an async action, remove this block
       return null; // render null when app is not ready
@@ -37,9 +65,28 @@ componentDidMount() {
     return (
       <div className="App">
         <header className="App-header">
-          <h1>Disappointing 30 under 30</h1>
-          <p>A place to remind your parents how much of a let down you are</p>
-		  <img src="../Assets/plusButton.svg" alt="Add Your Own" height="30" width="30" className="addYourOwn" onClick={AddYourOwn}/>
+            <h1>Disappointing 30 under 30</h1>
+            <p>A place to remind your parents how much of a let down you are</p>
+			<button onClick={this.openModal}>Open Modal</button>
+			<Modal
+			isOpen={this.state.modalIsOpen}
+			onAfterOpen={this.afterOpenModal}
+			onRequestClose={this.closeModal}
+			style={customStyles}
+			contentLabel="Example Modal"
+			>
+
+			<h2 ref={subtitle => this.subtitle = subtitle}>Add Your Own</h2>
+			<div>I am a modal</div>
+			<form>
+				<input />
+				<button>tab navigation</button>
+				<button>stays</button>
+				<button>inside</button>
+				<button>the modal</button>
+			</form>
+			<button onClick={this.closeModal}>Cancel</button>
+			</Modal>
         </header>
         <main>
             <CardList data={ data }/>
