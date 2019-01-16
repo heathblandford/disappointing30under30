@@ -9,20 +9,31 @@ class App extends Component {
     super(props);
 
     this.state = {
-        data: [],
+		data: [],
+		loading: true
     }
 };
 
 componentDidMount() {
 	//fetch api data
-	fetch('https://frozen-plateau-56176.herokuapp.com')
-	.then(response => response.json())
+	  fetch('https://frozen-plateau-56176.herokuapp.com')
+    .then(response => response.json())
 	// { data } is object shorthand. this.setState() expects an object to return an array
-    .then(data => this.setState({ data }));
+	.then(data => this.setState({ data }));
+
+	setTimeout(() => {
+		this.setState({ loading: false})
+	}, 1500);
 }
 
   render() {
     const { data } = this.state;
+	const { loading } = this.state;
+
+	if(loading) { // if your component doesn't have to wait for an async action, remove this block
+      return null; // render null when app is not ready
+	}
+
     return (
       <div className="App">
         <header className="App-header">

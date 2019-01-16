@@ -10,10 +10,11 @@ const Socials = ({disappointment}) => {
             title={disappointment}
             sites={['facebook', 'twitter', 'reddit']}
             color='black'
-            width="50"
-            height="50"
+            width="40"
+            height="40"
             theme="minimal"
             className="socialButtons"
+            target="_blank"
         />
         </div>
     );
