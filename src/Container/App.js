@@ -56,10 +56,10 @@ componentDidMount() {
 
   render() {
     const { data } = this.state;
-	  const { loading } = this.state;
+	const { loading } = this.state;
 
 	if(loading) { // if your component doesn't have to wait for an async action, remove this block
-      return null; // render null when app is not ready
+    	return null; // render null when app is not ready
 	}
 
     return (
@@ -69,21 +69,20 @@ componentDidMount() {
             <p>A place to remind your parents how much of a let down you are</p>
 			<button onClick={this.openModal}>Open Modal</button>
 			<Modal
-			isOpen={this.state.modalIsOpen}
-			onAfterOpen={this.afterOpenModal}
-			onRequestClose={this.closeModal}
-			style={customStyles}
-			contentLabel="Example Modal"
+				isOpen={this.state.modalIsOpen}
+				onAfterOpen={this.afterOpenModal}
+				onRequestClose={this.closeModal}
+				style={customStyles}
+				// contentLabel="Example Modal"
 			>
 
 			<h2 ref={subtitle => this.subtitle = subtitle}>Add Your Own</h2>
-			<div>I am a modal</div>
-			<form>
-				<input />
-				<button>tab navigation</button>
-				<button>stays</button>
-				<button>inside</button>
-				<button>the modal</button>
+			<form action="#" method="post" target="_self"> {/* https://frozen-plateau-56176.herokuapp.com */}
+				<input type="text" name="first_name" placeholder="First Name"/><br/>
+				<input type="text" name="last_name" placeholder="Last Name"/><br/>
+				<input type="number" name="age" placeholder="29"/><br/>
+				<textarea cols="50" rows="5" name="disappointment" placeholder="Type your disappointment here!"/><br />
+				<input type="submit" value="SEND IT" />
 			</form>
 			<button onClick={this.closeModal}>Cancel</button>
 			</Modal>
