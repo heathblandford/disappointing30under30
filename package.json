@@ -8,7 +8,7 @@
     "react-dom": "^16.7.0",
     "react-modal": "^3.8.1",
     "react-scripts": "2.1.2",
-    "react-simple-social": "^1.0.5"
+    "react-simple-social": "^1.0.6"
   },
   "scripts": {
     "start": "react-scripts start",
