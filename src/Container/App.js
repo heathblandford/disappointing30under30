@@ -77,7 +77,7 @@ componentDidMount() {
 			>
 
 			<h2 ref={subtitle => this.subtitle = subtitle}>Add Your Own</h2>
-			<form action="https://frozen-plateau-56176.herokuapp.com" method="post" target="_blank"> {/* https://frozen-plateau-56176.herokuapp.com */}
+			<form action="https://frozen-plateau-56176.herokuapp.com" method="post" target="dummyframe" onSubmit={this.closeModal}>
 				<input type="text" name="first_name" placeholder="First Name"/><br/>
 				<input type="text" name="last_name" placeholder="Last Name"/><br/>
 				<input type="number" name="age" placeholder="29"/><br/>
