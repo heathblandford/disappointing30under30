@@ -24,7 +24,7 @@ class App extends Component {
     	modalIsOpen: false,
 	}
 
-	this.openModal = this.openModal.bind(this);
+	  this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
 };
@@ -56,7 +56,7 @@ componentDidMount() {
 
   render() {
     const { data } = this.state;
-	const { loading } = this.state;
+	  const { loading } = this.state;
 
 	if(loading) { // if your component doesn't have to wait for an async action, remove this block
     	return null; // render null when app is not ready
@@ -77,7 +77,7 @@ componentDidMount() {
 			>
 
 			<h2 ref={subtitle => this.subtitle = subtitle}>Add Your Own</h2>
-			<form action="#" method="post" target="_self"> {/* https://frozen-plateau-56176.herokuapp.com */}
+			<form action="https://frozen-plateau-56176.herokuapp.com" method="post" target="_blank"> {/* https://frozen-plateau-56176.herokuapp.com */}
 				<input type="text" name="first_name" placeholder="First Name"/><br/>
 				<input type="text" name="last_name" placeholder="Last Name"/><br/>
 				<input type="number" name="age" placeholder="29"/><br/>
