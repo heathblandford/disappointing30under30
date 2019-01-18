@@ -26,7 +26,8 @@ class App extends Component {
 
 	  this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
+		this.closeModal = this.closeModal.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);
 };
 
 openModal() {
@@ -42,16 +43,21 @@ closeModal() {
 	this.setState({modalIsOpen: false});
 }
 
+handleSubmit(event) {
+	event.preventDefault();
+	this.setState({modalIsOpen: false});
+}
+
 componentDidMount() {
 	//fetch api data
 	  fetch('https://frozen-plateau-56176.herokuapp.com')
     .then(response => response.json())
-	// { data } is object shorthand. this.setState() expects an object to return an array
-	.then(data => this.setState({ data }));
+		// { data } is object shorthand. this.setState() expects an object to return an array
+		.then(data => this.setState({ data }));
 
-	setTimeout(() => {
-		this.setState({ loading: false})
-	}, 1500);
+		setTimeout(() => {
+			this.setState({ loading: false})
+		}, 1500);
 }
 
   render() {
@@ -67,7 +73,7 @@ componentDidMount() {
         <header className="App-header">
             <h1>Disappointing 30 under 30</h1>
             <p>A place to remind your parents how much of a let down you are</p>
-			<button onClick={this.openModal}>Open Modal</button>
+				<button onClick={this.openModal}>Open Modal</button>
 			<Modal
 				isOpen={this.state.modalIsOpen}
 				onAfterOpen={this.afterOpenModal}
@@ -77,16 +83,18 @@ componentDidMount() {
 			>
 
 			<h2 ref={subtitle => this.subtitle = subtitle}>Add Your Own</h2>
-			<form action="https://frozen-plateau-56176.herokuapp.com" method="post" target="dummyframe" onSubmit={this.closeModal}>
+			<form action="https://frozen-plateau-56176.herokuapp.com" method="post" target="dummyframe" > {/* this closes the modal fine but doesn't submit the form */}
 				<input type="text" name="first_name" placeholder="First Name"/><br/>
 				<input type="text" name="last_name" placeholder="Last Name"/><br/>
 				<input type="number" name="age" placeholder="29"/><br/>
 				<textarea cols="50" rows="5" name="disappointment" placeholder="Type your disappointment here!"/><br />
-				<input type="submit" value="SEND IT" />
+				<input type="submit" value="SEND IT" onSubmit={this.handleSubmit}/>
 			</form>
 			<button onClick={this.closeModal}>Cancel</button>
 			</Modal>
         </header>
+
+
         <main>
             <CardList data={ data }/>
         </main>
