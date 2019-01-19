@@ -21,3 +21,87 @@ p {
   height: 30px;
   width: 30px;
 }
+
+.Modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border-radius: 25px;
+  height: 400px;
+}
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.Modal * {
+  padding-left: 10px;
+  margin-bottom: 15px;
+}
+
+.Modal h1 {
+  text-align: center;
+  color: palevioletred;
+  text-decoration: underline;
+  font-size: 2.8rem;
+}
+
+.Modal button {
+  margin-left: 10px;
+}
+
+.Modal input {
+  height: 20px;
+  border-radius: 25px;
+}
+
+.Modal textarea {
+  border-radius: 25px;
+  margin-right: 12px;
+}
+
+.Modal input::placeholder {
+  color: #b96fd6;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.Modal textarea::placeholder {
+  color: #b96fd6;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.Modal input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+  margin: 0;
+}
+
+/* media queries */
+
+@media only screen and (max-width: 700px) {
+  .Modal {
+    width: 300px;
+  }
+
+  .Modal textarea {
+    width: 250px;
+  }
+
+  .Modal textarea::placeholder {
+    color: #b96fd6;
+    font-weight: bold;
+    font-size: 1.25rem;
+  }
+}

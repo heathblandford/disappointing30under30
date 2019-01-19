@@ -4,17 +4,7 @@ import "../Stylizers/App.css";
 import "../Assets/plusButton.svg";
 import Modal from "react-modal";
 
-const customStyles = {
-  //this is for the modal
-  content: {
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)"
-  }
-};
+Modal.setAppElement("#root");
 
 class App extends Component {
   constructor(props) {
@@ -27,7 +17,6 @@ class App extends Component {
     };
 
     this.openModal = this.openModal.bind(this);
-    this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -36,20 +25,18 @@ class App extends Component {
     this.setState({ modalIsOpen: true });
   }
 
-  afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    this.subtitle.style.color = "#f00";
-  }
-
   closeModal() {
     this.setState({ modalIsOpen: false });
   }
 
-  handleSubmit = (e) => { //this is a "manual" submit instead of just using standard HTML type submit
-	document.submitYourOwn.submit(); //this is how we submit
-	setTimeout(() => {this.setState({modalIsOpen: false})}, 500); // set time out so that the web page had time to submit the form
-	e.preventDefault(); //prevent default submit option. ez pz
-  }
+  handleSubmit = e => {
+    //this is a "manual" submit instead of just using standard HTML type submit
+    document.submitYourOwn.submit(); //this is how we submit
+    setTimeout(() => {
+      this.setState({ modalIsOpen: false });
+    }, 500); // set time out so that the web page had time to submit the form
+    e.preventDefault(); //prevent default submit option. ez pz
+  };
 
   componentDidMount() {
     //fetch api data
@@ -58,7 +45,7 @@ class App extends Component {
       // { data } is object shorthand. this.setState() expects an object to return an array
       .then(data => this.setState({ data, loading: false }));
 
-      //there was a setTimeout() here for force loading icon, but moved to fetch .then for rendering
+    //there was a setTimeout() here for force loading icon, but moved to fetch .then for rendering
   }
 
   render() {
@@ -80,10 +67,11 @@ class App extends Component {
             isOpen={this.state.modalIsOpen}
             onAfterOpen={this.afterOpenModal}
             onRequestClose={this.closeModal}
-            style={customStyles}
+            className="Modal"
+            overlayClassName="Overlay"
             // contentLabel="Example Modal"
           >
-            <h2 ref={subtitle => (this.subtitle = subtitle)}>Add Your Own</h2>
+            <h1>Add Your Own</h1>
             <form
               action="https://frozen-plateau-56176.herokuapp.com"
               method="post"
@@ -96,7 +84,7 @@ class App extends Component {
               <br />
               <input type="text" name="last_name" placeholder="Last Name" />
               <br />
-              <input type="number" name="age" placeholder="29" /> 
+              <input type="number" name="age" placeholder="Age" />
               <br />
               <textarea
                 cols="50"
@@ -105,8 +93,8 @@ class App extends Component {
                 placeholder="Type your disappointment here!"
               />
               <br />
-              <button type="submit">SEND IT</button>
             </form>
+            <button type="submit">SEND IT</button>
             <button onClick={this.closeModal}>Cancel</button>
           </Modal>
         </header>
