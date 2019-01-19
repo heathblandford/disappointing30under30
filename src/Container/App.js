@@ -56,9 +56,9 @@ componentDidMount() {
 	// { data } is object shorthand. this.setState() expects an object to return an array
 	.then(data => this.setState({ data, loading: false }));
 
-	setTimeout(() => {
-		this.setState({ loading: false})
-	}, 1500);
+		setTimeout(() => {
+			this.setState({ loading: false})
+		}, 1500);
 }
 
   render() {
@@ -74,7 +74,7 @@ componentDidMount() {
         <header className="App-header">
             <h1>Disappointing 30 under 30</h1>
             <p>A place to remind your parents how much of a let down you are</p>
-			<button onClick={this.openModal}>Open Modal</button>
+				<button onClick={this.openModal}>Open Modal</button>
 			<Modal
 				isOpen={this.state.modalIsOpen}
 				onAfterOpen={this.afterOpenModal}
@@ -89,11 +89,13 @@ componentDidMount() {
 				<input type="text" name="last_name" placeholder="Last Name"/><br/>
 				<input type="number" name="age" placeholder="29"/><br/>
 				<textarea cols="50" rows="5" name="disappointment" placeholder="Type your disappointment here!"/><br />
-				<input type="submit" value="SEND IT" />
+				<input type="submit" value="SEND IT" onSubmit={this.handleSubmit}/>
 			</form>
 			<button onClick={this.closeModal}>Cancel</button>
 			</Modal>
         </header>
+
+
         <main>
             <CardList data={ data }/>
         </main>
