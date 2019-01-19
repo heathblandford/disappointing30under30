@@ -62,7 +62,7 @@ class App extends Component {
         <header className="App-header">
           <h1>Disappointing 30 under 30</h1>
           <p>A place to remind your parents how much of a let down you are</p>
-          <button onClick={this.openModal}>Open Modal</button>
+          <button onClick={this.openModal}>Add Your Own</button>
           <Modal
             isOpen={this.state.modalIsOpen}
             onAfterOpen={this.afterOpenModal}
@@ -94,14 +94,19 @@ class App extends Component {
               />
               <br />
             </form>
-            <button type="submit">SEND IT</button>
-            <button onClick={this.closeModal}>Cancel</button>
+            <div className="buttonHolder">
+              <button type="submit">Add it!</button>
+              <button onClick={this.closeModal}>Cancel</button>
+            </div>
           </Modal>
         </header>
 
         <main>
           <CardList data={data} />
         </main>
+        <footer>
+          <p>made with <span role="img" aria-label="love">❤️</span> and stress in Cincinnati, OH</p>
+        </footer>
       </div>
     );
   }
