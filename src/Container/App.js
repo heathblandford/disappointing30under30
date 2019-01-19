@@ -26,7 +26,8 @@ class App extends Component {
 
 	  this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
+		this.closeModal = this.closeModal.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);
 };
 
 openModal() {
@@ -42,12 +43,18 @@ closeModal() {
 	this.setState({modalIsOpen: false});
 }
 
+handleSubmit = (e) => {
+	document.submitYourOwn.submit();
+	setTimeout(() => {this.setState({modalIsOpen: false})}, 500);
+	e.preventDefault();
+}
+
 componentDidMount() {
 	//fetch api data
 	  fetch('https://frozen-plateau-56176.herokuapp.com')
     .then(response => response.json())
 	// { data } is object shorthand. this.setState() expects an object to return an array
-	.then(data => this.setState({ data }));
+	.then(data => this.setState({ data, loading: false }));
 
 	setTimeout(() => {
 		this.setState({ loading: false})
@@ -77,7 +84,7 @@ componentDidMount() {
 			>
 
 			<h2 ref={subtitle => this.subtitle = subtitle}>Add Your Own</h2>
-			<form action="https://frozen-plateau-56176.herokuapp.com" method="post" target="dummyframe" onSubmit={this.closeModal}>
+			<form action="https://frozen-plateau-56176.herokuapp.com" method="post" target="dummyframe" onSubmit={this.handleSubmit} name="submitYourOwn">
 				<input type="text" name="first_name" placeholder="First Name"/><br/>
 				<input type="text" name="last_name" placeholder="Last Name"/><br/>
 				<input type="number" name="age" placeholder="29"/><br/>
