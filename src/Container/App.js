@@ -45,9 +45,10 @@ class App extends Component {
     this.setState({ modalIsOpen: false });
   }
 
-  handleSubmit(event) {
-    event.preventDefault();
-    this.setState({ modalIsOpen: false });
+  handleSubmit = (e) => { //this is a "manual" submit instead of just using standard HTML type submit
+	document.submitYourOwn.submit(); //this is how we submit
+	setTimeout(() => {this.setState({modalIsOpen: false})}, 500); // set time out so that the web page had time to submit the form
+	e.preventDefault(); //prevent default submit option. ez pz
   }
 
   componentDidMount() {
@@ -55,11 +56,9 @@ class App extends Component {
     fetch("https://frozen-plateau-56176.herokuapp.com")
       .then(response => response.json())
       // { data } is object shorthand. this.setState() expects an object to return an array
-      .then(data => this.setState({ data }));
+      .then(data => this.setState({ data, loading: false }));
 
-    setTimeout(() => {
-      this.setState({ loading: false });
-    }, 1500);
+      //there was a setTimeout() here for force loading icon, but moved to fetch .then for rendering
   }
 
   render() {
@@ -90,6 +89,7 @@ class App extends Component {
               method="post"
               target="dummyframe"
               onSubmit={this.handleSubmit}
+              name="submitYourOwn"
             >
               {/* this closes the modal fine but doesn't submit the form */}
               <input type="text" name="first_name" placeholder="First Name" />
