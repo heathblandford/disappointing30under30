@@ -93,10 +93,10 @@ class App extends Component {
                 placeholder="Type your disappointment here!"
               />
               <br />
-            </form>
-            <div className="buttonHolder">
               <button type="submit">Add it!</button>
               <button onClick={this.closeModal}>Cancel</button>
+            </form>
+            <div className="buttonHolder">
             </div>
           </Modal>
         </header>
