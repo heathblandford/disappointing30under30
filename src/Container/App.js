@@ -15,6 +15,7 @@ const customStyles = {
     transform: "translate(-50%, -50%)"
   }
 };
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -95,7 +96,7 @@ class App extends Component {
               <br />
               <input type="text" name="last_name" placeholder="Last Name" />
               <br />
-              <input type="number" name="age" placeholder="29" />
+              <input type="number" name="age" placeholder="29" /> 
               <br />
               <textarea
                 cols="50"
