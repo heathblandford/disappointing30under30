@@ -148,7 +148,7 @@ footer a:hover {
   margin-bottom: 15px;
 }
 
-.Modal input:focus {
+.Modal input:focus{
   outline: 0;
 }
 
@@ -159,7 +159,7 @@ footer a:hover {
   padding-top: 5px;
 }
 
-.Modal textarea:focus {
+.Modal textarea:focus{
   outline: 0;
 }
 
@@ -200,15 +200,14 @@ footer a:hover {
   }
 }
 
-@media not all and (min-resolution: 0.001dpcm) {
-  @media {
-    .Modal input::placeholder {
-      font-size: 1rem;
-    }
+@media not all and (min-resolution:.001dpcm) { @media {
 
-    .Modal input {
-      height: 35px;
-      line-height: 35px;
-    }
+  .Modal input::placeholder {
+    font-size: 1rem;
   }
-}
+
+  .Modal input {
+    height: 35px;
+    line-height: 35px;
+  }
+}}
