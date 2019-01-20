@@ -21,7 +21,7 @@
 
 .App-header button {
   background-color: white;
-  border: none;
+  border: 2px solid transparent;
   border-radius: 15px;
   color: #8d54a3;
   padding: 15px 32px;
@@ -37,6 +37,7 @@
 .App-header button:hover {
   background-color: #8d54a3;
   color: white;
+  border: 2px solid white;
 }
 
 .App-header button:focus {

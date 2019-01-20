@@ -105,7 +105,7 @@ class App extends Component {
           <CardList data={data} />
         </main>
         <footer>
-          <p>made with <span role="img" aria-label="love">❤️</span> and stress in Cincinnati, OH</p>
+          <p>made with <span role="img" aria-label="love">❤️</span> and diet soda in Cincinnati, OH</p>
           <p>inspired by <a href="https://www.newyorker.com/humor/daily-shouts/a-selection-of-the-30-most-disappointing-under-30">an article</a> from The New Yorker</p>
         </footer>
       </div>
