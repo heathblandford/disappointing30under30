@@ -134,6 +134,10 @@ footer a:hover {
   color: #8d54a3;
 }
 
+.Modal button:focus {
+  outline: 0;
+}
+
 .buttonHolder {
   text-align: center;
 }
@@ -144,11 +148,19 @@ footer a:hover {
   margin-bottom: 15px;
 }
 
+.Modal input:focus {
+  outline: 0;
+}
+
 .Modal textarea {
   border-radius: 25px;
   margin-right: 12px;
   margin-top: 10px;
   padding-top: 5px;
+}
+
+.Modal textarea:focus {
+  outline: 0;
 }
 
 .Modal input::placeholder {
@@ -188,14 +200,15 @@ footer a:hover {
   }
 }
 
-@media not all and (min-resolution:.001dpcm) { @media {
+@media not all and (min-resolution: 0.001dpcm) {
+  @media {
+    .Modal input::placeholder {
+      font-size: 1rem;
+    }
 
-  .Modal input::placeholder {
-    font-size: 1rem;
+    .Modal input {
+      height: 35px;
+      line-height: 35px;
+    }
   }
-
-  .Modal input {
-    height: 35px;
-    line-height: 35px;
-  }
-}}
+}

@@ -80,17 +80,18 @@ class App extends Component {
               name="submitYourOwn"
             >
               {/* this closes the modal fine but doesn't submit the form */}
-              <input type="text" name="first_name" placeholder="First Name" />
+              <input type="text" name="first_name" placeholder="First Name" required/>
               <br />
-              <input type="text" name="last_name" placeholder="Last Name" />
+              <input type="text" name="last_name" placeholder="Last Name" required/>
               <br />
-              <input type="number" name="age" placeholder="Age" />
+              <input type="number" name="age" placeholder="Age" required/>
               <br />
               <textarea
                 cols="50"
                 rows="5"
                 name="disappointment"
                 placeholder="Type your disappointment here!"
+                required
               />
               <br />
               <button type="submit">Add it!</button>
