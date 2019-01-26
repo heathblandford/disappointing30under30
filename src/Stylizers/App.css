@@ -146,6 +146,9 @@ footer a:hover {
   height: 25px;
   border-radius: 25px;
   margin-bottom: 15px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
+  color: #8d54a3;
 }
 
 .Modal input:focus{
@@ -157,6 +160,11 @@ footer a:hover {
   margin-right: 12px;
   margin-top: 10px;
   padding-top: 5px;
+  padding-left: 15px;
+  resize: none;
+  font-family: 'Quicksand', sans-serif;
+  color: #8d54a3;
+  font-weight: bold;
 }
 
 .Modal textarea:focus{
