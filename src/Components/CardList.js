@@ -12,11 +12,11 @@ let todayMillis = date.getUTCMilliseconds();
 let todayDateText = `${todayYear}-${todayMonth}-${todayDay}T${todayHours}:${todayMins}:${todaySecs}.${todayMillis}`
 
 const CardList = ({ data }) => {
-    //sort data by most recent added
+    //sort data by most recent addedhero
     data.sort((a) => {
         return todayDateText > a.createdAt ? -1 : a.createdAt>todayDateText ? 1 : 0;
     })
-    
+
     return (
         <div>
             {
