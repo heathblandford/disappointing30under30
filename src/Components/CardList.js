@@ -1,8 +1,22 @@
 import React from 'react';
 import Card from './Card';
 
-const CardList = ({ data }) => {
+let date = new Date();
+let todayMonth = date.getUTCMonth() + 1;
+let todayDay = date.getUTCDate();
+let todayYear = date.getUTCFullYear();
+let todayHours = date.getUTCHours();
+let todayMins = date.getUTCMinutes();
+let todaySecs = date.getUTCSeconds();
+let todayMillis = date.getUTCMilliseconds();
+let todayDateText = `${todayYear}-${todayMonth}-${todayDay}T${todayHours}:${todayMins}:${todaySecs}.${todayMillis}`
 
+const CardList = ({ data }) => {
+    //sort data by most recent added
+    data.sort((a) => {
+        return todayDateText > a.createdAt ? -1 : a.createdAt>todayDateText ? 1 : 0;
+    })
+    
     return (
         <div>
             {
