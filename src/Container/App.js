@@ -84,7 +84,7 @@ class App extends Component {
               <br />
               <input type="text" name="last_name" placeholder="Last Name" required/>
               <br />
-              <input type="number" name="age" placeholder="Age" required/>
+              <input type="number" name="age" min="20" max="29" placeholder="Age" required/>
               <br />
               <textarea
                 cols="50"

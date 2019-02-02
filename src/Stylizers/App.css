@@ -9,8 +9,8 @@
 
 .App-header h1 {
   font-family: "Pacifico", cursive;
-  font-size: 4rem;
-  padding-bottom: 10px;
+  font-size: 3.8rem;
+  padding: 10px;
 }
 
 .App-header p {
@@ -83,7 +83,7 @@ footer a:hover {
   transform: translate(-50%, -50%);
   background-color: #fff;
   border-radius: 25px;
-  height: 450px;
+  height: max-content;
   border: 5px solid #b96fd6;
 }
 
@@ -189,6 +189,7 @@ footer a:hover {
   -moz-appearance: textfield;
   appearance: textfield;
   margin: 0;
+  width: 60px;
 }
 
 /* media queries */
