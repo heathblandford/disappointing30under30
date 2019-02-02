@@ -60,7 +60,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1>Disappointing 30 under 30</h1>
+          <h1>Disappointing 30 Under 30</h1>
           <p>A place to remind your parents how much of a let down you are</p>
           <button onClick={this.openModal}>Add Your Own</button>
           <Modal

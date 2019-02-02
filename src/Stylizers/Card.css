@@ -15,19 +15,19 @@
 
 .nameAge * {
     display: inline;
+    font-family: 'Arimo', sans-serif;
 }
 
 .nameAge {
     padding-top: 10px;
     padding-left: 10px;
     padding-right: 5px;
-    font-family: 'Yellowtail', cursive;
-    font-size: 1.75rem;
+    font-size: 1.25rem;
 }
 
 .disappointment {
     padding: 5px 10px;
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Arimo', sans-serif;
     font-size: 1.2rem;
 }
 
