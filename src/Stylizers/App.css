@@ -208,6 +208,8 @@ footer a:hover {
   }
 }
 
+/* media query for safari only */
+
 @media not all and (min-resolution:.001dpcm) { @media {
 
   .Modal input::placeholder {
