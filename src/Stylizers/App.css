@@ -9,14 +9,14 @@
 
 .App-header h1 {
   font-family: "Pacifico", cursive;
-  font-size: 3rem;
-  padding-bottom: 10px;
+  font-size: 3.8rem;
+  padding: 10px;
 }
 
 .App-header p {
   padding: 0px 15px;
-  font-family: "Quicksand", sans-serif;
-  font-size: 1.5rem;
+  font-family: "Arimo", sans-serif;
+  font-size: 1.25rem;
 }
 
 .App-header button {
@@ -29,7 +29,7 @@
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  font-family: "Quicksand", sans-serif;
+  font-family: "Arimo", sans-serif;
   font-weight: bold;
   cursor: pointer;
 }
@@ -55,7 +55,7 @@ footer {
 
 footer p {
   text-align: center;
-  font-family: "Quicksand", sans-serif;
+  font-family: "Arimo", sans-serif;
 }
 
 footer a:link {
@@ -83,7 +83,7 @@ footer a:hover {
   transform: translate(-50%, -50%);
   background-color: #fff;
   border-radius: 25px;
-  height: 450px;
+  height: max-content;
   border: 5px solid #b96fd6;
 }
 
@@ -122,7 +122,7 @@ footer a:hover {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  font-family: "Quicksand", sans-serif;
+  font-family: "Arimo", sans-serif;
   font-weight: bold;
   margin: 15px 10px;
   cursor: pointer;
@@ -146,7 +146,7 @@ footer a:hover {
   height: 25px;
   border-radius: 25px;
   margin-bottom: 15px;
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Arimo', sans-serif;
   font-weight: bold;
   color: #8d54a3;
 }
@@ -162,7 +162,7 @@ footer a:hover {
   padding-top: 5px;
   padding-left: 15px;
   resize: none;
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Arimo', sans-serif;
   color: #8d54a3;
   font-weight: bold;
 }
@@ -175,20 +175,21 @@ footer a:hover {
   color: #b96fd6;
   font-weight: bold;
   font-size: 1rem;
-  font-family: "Quicksand", sans-serif;
+  font-family: "Arimo", sans-serif;
 }
 
 .Modal textarea::placeholder {
   color: #b96fd6;
   font-weight: bold;
   font-size: 1.25rem;
-  font-family: "Quicksand", sans-serif;
+  font-family: "Arimo", sans-serif;
 }
 
 .Modal input[type="number"] {
   -moz-appearance: textfield;
   appearance: textfield;
   margin: 0;
+  width: 60px;
 }
 
 /* media queries */
